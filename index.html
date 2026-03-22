@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Mouse Scroll PRO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-top: #0f141e;
+            --bg-bot: #1e0a28;
+            --accent: #00ffd2;
+            --accent-glow: rgba(0, 255, 210, 0.4);
+            --text-main: #f0f5ff;
+            --text-sec: #a0aabe;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-weight;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-top), var(--bg-bot));
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Навигация */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* Главный экран */
+        header {
+            text-align: center;
+            padding: 100px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: var(--text-sec);
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* Кнопка скачивания */
+        .btn-download {
+            background: var(--accent);
+            color: #000;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px var(--accent-glow);
+            display: inline-block;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 35px var(--accent-glow);
+            background: #fff;
+        }
+
+        /* Сетка преимуществ */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 50px 10%;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--text-sec);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Подвал */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-sec);
+            font-size: 0.9rem;
+            background: rgba(0,0,0,0.2);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SmoothMouse<span>.PRO</span></div>
+    </nav>
+
+    <header>
+        <h1>Tier-1 Scroll Physics Engine</h1>
+        <p class="subtitle">Upgrade your Windows scrolling experience. Zero stutter, custom app profiles, and hardware-level precision inside a beautiful Glassmorphism UI.</p>
+        <a href="downloads/SmoothMouseScrollPRO_v1.0.0.zip" class="btn-download">Download for Windows (v1.0.0)</a>
+    </header>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Anti-Stutter Tech</h3>
+            <p>Runs at a stable 1000 FPS. Bypasses Windows EcoQoS throttling and prevents working set memory trimming for lag-free scrolling.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Per-App Profiles</h3>
+            <p>Automatically detects the window under your cursor using deep WinAPI hooks. Different scroll settings for your browser, IDE, or games.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⚙️</div>
+            <h3>Advanced Physics</h3>
+            <p>Take full control over step size, friction, acceleration, elasticity, and flywheel inertia. Make your mouse scroll exactly how you want.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🌍</div>
+            <h3>Multi-Language</h3>
+            <p>Built-in OTA updates and support for 11+ languages. You can even import your own custom JSON translation files in one click.</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Smooth Mouse Scroll PRO. All rights reserved. Built for Windows 10/11.
+    </footer>
+
+</body>
+</html>
